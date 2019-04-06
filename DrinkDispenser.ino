@@ -6,7 +6,7 @@
 byte mac[] = {
   0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED
 };
-IPAddress ip(192, 168, 0, 177);
+IPAddress ip(192, 168, 1, 77);
 
 unsigned int localPort = 8888;      // local port to listen on
 
@@ -125,7 +125,7 @@ void loop() {
         // Wait for cup to be removed
       }
       messageToEthernet("Cup removed!");
-      delay(5000);
+      delay(2000);
       messageToEthernet("Ready for next!");
     }
 
@@ -282,7 +282,7 @@ void dispenseDrink(int motorTurnAmount) {
     digitalWrite(stepPin,LOW);
     delayMicroseconds(500);
   }
-  delay(500);
+  delay(1500);
 
   setValveState(valveType.TANK, valveState.CLOSE);
   delay(500);
